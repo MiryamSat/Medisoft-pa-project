@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="medisoft-pa-dasboardMediciBase-Design.css">
+    <title>Portale del Medico di Base</title>
+</head>
+<body>
+
+    <!--In header inserire il nome della piattaforma e il nome del medico di base-->
+    <header>
+        <p>Data: 09 Aprile 2026</p> 
+        <h1> Portale del medico di base</h1>
+        <h2>nome medico:Dr. Brando Rossi</h2>
+
+    </header>
+
+    <!--Navigazione versione sidebar-->
+    <div class="sidebar">
+        <h2>Medisoft PA</h2>
+       <ul>
+  <li><a href="medisoft-pa-dashboardMediciBase.html">Dashboard</a></li>
+  <li>Pazienti</li>
+  <li>Appuntamenti</li>
+  <li>Report</li>
+  <li><a href="supporto.html">Supporto</a></li>
+</ul>
+    </div>
+
+    <!-- CONTENITORE PRINCIPALE -->
+    <div class="container-sidepanel">
+
+        <div class="content">
+
+            <!--aprire sezione di riepilogo dei pazienti in cura(totali, nuovi, pazienti critici, appuntamenti della giornata)-->
+            <div class="container">
+                <div class="cards">
+                    <div class="card">Pazienti:200</div>
+                    <div class="card">Nuovi pazienti: 25 (ultimi 30 giorni)</div>
+                    <div class="card">Pazienti critici:30 </div>
+                    <div class="card">Appuntamenti del giorno: 45</div>
+                </div>
+            </div>
+
+            <!--Tabella che contiene i pazienti in visita nella giornata odierna-->
+            <div class="container-table">
+
+                <!--aggiungere mini form di ricerca del paziente-->
+                <div class="search-bar">
+                   <input type="text" id="searchInput" placeholder="Cerca paziente...">
+                    <button>Cerca</button>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Età</th>
+                        <th>Patologie</th>
+                        <th>Ultima visita</th>
+                        <th>Stato</th>
+                        <th>Dettagli</th>
+                        <th>Azioni</th>
+                    </tr>
+
+                    <tr>
+                        <td>Mario Rossi</td>
+                        <td>65</td>
+                        <td>Diabete</td>
+                        <td>12/03/2026</td>
+                        <td>Stabile</td>
+                        <td><a href="dettagli-cliniziPazientiMedisoft.html">Dettagli</a></td>
+                        <td><a href="paziente.html">Azioni</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Luca Bianchi</td>
+                        <td>58</td>
+                        <td>Ipertensione</td>
+                        <td>20/03/2026</td>
+                        <td>Critico</td>
+                        <td><a href="paziente.html">Dettagli</a></td>
+                        <td><a href="paziente.html">Azioni</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>Anna Verdi</td>
+                        <td>72</td>
+                        <td>Cardiopatia</td>
+                        <td>01/04/2026</td>
+                        <td>Stabile</td>
+                        <td><a href="paziente.html">Dettagli</a></td>
+                        <td><a href="paziente.html">Azioni</a></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+
+        <!--PANEL LATERALE--> 
+        <aside class="side-panel">
+            <h3>Patologie più comuni</h3>
+            <p>Diabete: 40%</p>
+            <p>Ipertensione: 30%</p>
+            <p>Altro: 30%</p>
+        </aside>
+
+    </div>
+
+    <script src="midisoft-pa-dashboardMediciBase.js"></script>
+</body>
+</html>

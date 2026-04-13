@@ -1,0 +1,159 @@
+/* RESET BASE */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+/* HEADER */
+header {
+    background-color: navy;
+    color: white;
+    padding: 15px;
+ 
+    height: 100px;
+    box-sizing: border-box;
+}
+
+header p {
+    margin: 0 0 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header h2 {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 100px; /* sotto header */
+    left: 0;
+    width: 220px;
+    height: calc(100% - 100px);
+    background-color: #1f2d3d;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.sidebar:hover {
+    color: #4da3ff;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* LAYOUT PRINCIPALE */
+.container-sidepanel {
+    margin-left: 220px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CONTENUTO */
+.content {
+    flex: 3;
+}
+
+/* CARD */
+.cards {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* SEARCH BAR */
+.search-bar {
+    margin: 15px 0;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: navy;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #003f88;
+}
+
+/* TABELLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #f1f3f5;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* LINK */
+td a {
+    text-decoration: none;
+    color: navy;
+    font-weight: bold;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* SIDE PANEL */
+.side-panel {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

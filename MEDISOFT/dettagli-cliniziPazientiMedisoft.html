@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli paziente</title>
+
+    <style>
+  /* RESET BASE */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+}
+
+/* HEADER */
+header {
+    background-color: navy;
+    color: white;
+    padding: 20px;
+}
+
+.indietro {
+    color: white;
+}
+
+/* CONTENITORE */
+.conteiner-dati {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* SEZIONI */
+.grid-anagrafica,
+.grid-storicoMedico,
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+/* ANAGRAFICA */
+.grid-anagrafica p {
+    margin: 8px 0;
+}
+
+/* STORICO */
+.grid-storicoMedico p {
+    margin: 6px 0;
+}
+
+/* TITOLI */
+h2 {
+    margin-top: 0;
+}
+
+/*Richieste paziente*/
+.aperto {
+    color: red;
+    font-weight: bold;
+}
+
+.in-lavorazione {
+    color: orange;
+    font-weight: bold;
+}
+
+.chiuso {
+    color: green;
+    font-weight: bold;
+}
+
+/* TABELLA */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th {
+    background-color: navy;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* LINK */
+a {
+    color: navy;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+     <!-- HEADER -->
+    <header>
+        <h1>Gestione Pazienti</h1>
+        <h2>nome medico: Dr. Brando Rossi</h2>
+        <a href="medisoft-pa-dashboardMediciBase.html" class="indietro">← Torna alla dashboard</a>
+    </header>
+    
+
+    <!--CONTENITORE DATI-->
+    <div class="conteiner-dati">
+    <!--DATI ANAGRAFICI DEL PAZIENTE-->
+    <section class="grid-anagrafica">
+        <h2>Dati anagrafici</h2>
+           <p><strong>Nome e Cognome:</strong> Mario Rossi</p>
+            <p><strong>Data di nascita:</strong> 12/05/1960</p>
+            <p><strong>Luogo di nascita:</strong> Monza</p>
+            <p><strong>Codice fiscale:</strong> RSSMRA60E12F704P</p>
+            <p><strong>Residenza:</strong> Milano</p>
+            <p><strong>Indirizzo: </strong>Via Giuseppe Garibaldi 12, (20121)</p>
+            <p><strong>Domicilio:</strong> Milano</p>
+            <p><strong>Email:</strong> mario.rossi@email.com</p>
+            <p><strong>Telefono:</strong> 3331234567</p>
+    </section>
+<!--STORICO MEDICO-->
+    <section class="grid-storicoMedico">
+        <h2>Storico del paziente</h2>
+
+         <!-- CARTELLA CLINICA -->
+            <h3>Cartella Clinica</h3>
+            <p>
+                📄 <a href="cartella-clinica-mario-rossi.pdf" target="_blank">
+                    Visualizza Cartella Clinica
+                </a>
+            </p>
+<!--Inserire sistema di selezione per le patologie e le criticità che il medico possa selezionare tramite segnalazione al servizio di gestione-->
+        <p><strong>Patologia:</strong></p>
+        <input type="text" id="patologia" value="Diabete" disabled>
+        <p><strong>Stato:</strong></p>
+        <select id="stato" disabled>
+            <option>Stabile</option>
+            <option>In osservazione</option>
+            <option>Critico</option>
+            <option>In miglioramento</option>
+            <button onclick="attivaModifica()">Modifica</button>
+            <button onclick="salvaModifiche()">Salva</button>
+            
+        </select>
+        <h3>Ultime visite</h3>
+            <ul>
+                <li>12/03/2026 - Controllo generale</li>
+                <li>10/02/2026 - Analisi glicemia</li>
+            </ul>
+
+            <h3>Ricette emesse ultimi 90 giorni</h3>
+            <ul>
+                <li>Insulina - Marzo 2026</li>
+                <li>Metformina - Febbraio 2026</li>
+            </ul>
+
+            <h3>Note del medico</h3>
+            <textarea>Paziente stabile, monitorare glicemia quotidianamente.</textarea>
+            <br><br>
+
+<button onclick="attivaModifica()">Modifica</button>
+<button onclick="salvaModifiche()">Salva</button>
+
+<!--SCRIPT SELEZIONE MODIFICHE-->
+<script>
+    function attivaModifica() {
+        document.getElementById("patologia").disabled = false;
+        document.getElementById("stato").disabled =false;
+        document.getElementById("noteMedico").disabled = false;
+    }
+
+    function salvaModifiche() {
+    document.getElementById("patologia").disabled = true;
+    document.getElementById("stato").disabled = true;
+    document.getElementById("noteMedico").disabled = true;
+
+    alert("Modifiche salvate!");
+}
+</script>
+    </section>
+
+    <!-- SEZIONE DEDICATA ALLE RICHIESTE DEL PAZIENTE -->
+<section class="card">
+    <h2>Richieste del Paziente</h2>
+<a href="supporto.html">Vai al Customer Care</a>
+    <!--FORM PER NUOVE RICHIESTE-->
+    <div class="nuova-richiesta">
+        <input type="text" id="nuovaRichiesta" placeholder="Scrivi richiesta del paziente">
+
+<select id="tipoRichiesta">
+    <option value="Ricetta">Ricetta</option>
+    <option value="Visita">Visita</option>
+    <option value="Informazioni">Informazioni</option>
+</select>
+
+<select id="prioritaRichiesta">
+    <option value="Bassa">Bassa</option>
+    <option value="Media">Media</option>
+    <option value="Alta">Alta</option>
+</select>
+
+<button onclick="aggiungiRichiesta()">Aggiungi</button>
+    </div>
+           
+    <table id="tabellaRichieste">
+        <tr>
+            <th>Data</th>
+            <th>Richiesta</th>
+            <th>Tipo</th>
+            <th>Priorità</th>
+            <th>Stato</th>
+            <th>Azioni</th>
+        </tr>
+
+        <tr>
+           <td>10/04/2026</td>
+           <td>Richiesta ricetta per visita oculistica</td>
+           <td>Ricetta</td>
+           <td>Alta</td>
+           <td class="aperto">Aperto</td>
+           <td><button onclick="cambiaStato(this)">Avanza stato</button></td>
+        </tr>
+
+        <tr>
+          <td>05/04/2026</td>
+          <td>Prenotazione visita</td>
+          <td>Visita</td>
+          <td>Media</td>
+          <td class="chiuso">Chiuso</td>
+          <td><button onclick="cambiaStato(this)">Avanza stato</button></td>
+        </tr>
+
+    </table>
+
+<script>
+function aggiungiRichiesta() {
+    let input = document.getElementById("nuovaRichiesta");
+    let tipo = document.getElementById("tipoRichiesta").value;
+    let priorita = document.getElementById("prioritaRichiesta").value;
+
+    let testo = input.value.trim();
+
+    if (testo === "") {
+        alert("Scrivi una richiesta!");
+        return;
+    }
+
+    let tabella = document.getElementById("tabellaRichieste");
+    let nuovaRiga = tabella.insertRow();
+
+    let data = new Date().toLocaleDateString();
+
+    nuovaRiga.insertCell(0).innerText = data;
+    nuovaRiga.insertCell(1).innerText = testo;
+    nuovaRiga.insertCell(2).innerText = tipo;
+    nuovaRiga.insertCell(3).innerText = priorita;
+
+    let statoCella = nuovaRiga.insertCell(4);
+    statoCella.innerText = "Aperto";
+    statoCella.className = "aperto";
+
+    let cellaAzione = nuovaRiga.insertCell(5);
+    cellaAzione.innerHTML = '<button onclick="cambiaStato(this)">Avanza stato</button>';
+
+    input.value = "";
+}
+
+function cambiaStato(button) {
+    let riga = button.parentElement.parentElement;
+    let stato = riga.cells[4]; // ATTENZIONE: cambiato indice
+
+    if (stato.innerText === "Aperto") {
+        stato.innerText = "In lavorazione";
+        stato.className = "in-lavorazione";
+    } 
+    else if (stato.innerText === "In lavorazione") {
+        stato.innerText = "Chiuso";
+        stato.className = "chiuso";
+    } 
+    else {
+        stato.innerText = "Aperto";
+        stato.className = "aperto";
+    }
+}
+</script>
+</section>
+    </div>
+</body>
+</html>
